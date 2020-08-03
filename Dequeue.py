@@ -1,6 +1,37 @@
 '''
 
-Dequeue
+<----------------------------------------------------------------------------- DeQueues in Python ----------------------------------------------------------------------------->
+0) Terminologies : 
+
+    a. Node − Each Node of a Queue can store a data called an element.
+
+    b. Next − Each link of a Queue contains a link to the next link called Next.
+
+    c. Queue − A Queue operates on First In First Out Principal (FIFO).
+    
+1) Basics : 
+
+    a. Queue has two pointers i. Head ii. Tail.
+    
+    b. Each link carries a data field(s) and a link field called next.
+
+    c. Each link is linked with its next link using its next link.
+
+    d. Last link carries a link as null to mark the end of the list.
+
+2) Functions : 
+
+    a. enqueueAtFront - insert a element at the head of the queue.
+    
+    b. enqueueAtEnd - insert a element at the tail of the queue.
+    
+    c. dequeueAtFront - Remove an element in front of the queue(head).
+
+    d. dequeueAtEnd - Remove an element in end of the queue(tail).
+    
+    e. isEmpty - return whether the Queue is empty or not
+    
+    f. printQueue - Prints the queue.
 
 '''
 class Node:
@@ -39,6 +70,13 @@ class Queue:
     def dequeueAtEnd(self):
         self.tail = self.tail.prev
         self.tail.next = None
+    
+    
+    def first(self):
+        return self.head.data
+        
+    def isEmpty(self):
+        return self.head == None
         
     
     def printQueue(self):
@@ -65,4 +103,6 @@ if __name__ == '__main__':
     queue.dequeueAtEnd()
     
     queue.printQueue()
+    print('\nFirst Item : ',queue.first())
+    print('If the Queue is empty? : ',queue.isEmpty())
         
