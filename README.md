@@ -3,3 +3,4 @@
 2) Stack
 3) Queue
 4) Reverse Linked List
+5) DeQueue
