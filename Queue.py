@@ -1,11 +1,11 @@
 '''
 
-<----------------------------------------------------------------------------- Stacks in Python ----------------------------------------------------------------------------->
+<----------------------------------------------------------------------------- Queues in Python ----------------------------------------------------------------------------->
 0) Terminologies : 
 
-    a. Node − Each Node of a Stack can store a data called an element.
+    a. Node − Each Node of a Queue can store a data called an element.
 
-    b. Next − Each link of a stack contains a link to the next link called Next.
+    b. Next − Each link of a Queue contains a link to the next link called Next.
 
     c. Queue − A Queue operates on First In First Out Principal (FIFO).
     
