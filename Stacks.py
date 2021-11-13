@@ -40,28 +40,28 @@ class Node:
 
 class Stack:
     def __init__(self):
-        self.base = None
+        self.top = None
      
     #a. push - insert a element at the top of stack 
     def push(self,data):
         newNode = Node(data)
-        if(self.base == None):
-            self.base = newNode
+        if(self.top == None):
+            self.top = newNode
         else:
-            currentNode = self.base
+            currentNode = self.top
             while(currentNode.next != None):
                 currentNode = currentNode.next
             currentNode.next = newNode
     
     #b. pop - Remove an element on the top in the stack
     def pop(self):
-        if(self.base == None):
+        if(self.top == None):
             print('No elements in Stack to pop!')
             return
-        currentNode = self.base
+        currentNode = self.top
         if(currentNode.next == None):
             print('Popped Element : ',currentNode.data)
-            self.base = None
+            self.top = None
             return
             
         while(currentNode.next.next != None):
@@ -71,29 +71,29 @@ class Stack:
         
     #c. Stack Top / Peek - returns the element at the top of the stack  
     def stackTop(self):
-        if(self.base == None):
+        if(self.top == None):
             print('No elements in Stack!')
             return
-        currentNode = self.base
+        currentNode = self.top
         while(currentNode.next != None):
             currentNode = currentNode.next
         return currentNode.data
     
     #d. isEmpty - return whether the Stack is empty or not 
     def isEmpty(self):
-        return self.base == None
+        return self.top == None
     
     #e. printStack - Prints the stack in order of insertion    
     def printStack(self):
-        if(self.base == None):
+        if(self.top == None):
             print('No elements in Stack!')
             return
-        
-        currentNode = self.base
+        print('Stack Elements : ',end=' ')
+        currentNode = self.top
         while(currentNode != None):
             print(currentNode.data,end = ' ')
             currentNode = currentNode.next
-    
+        print()
         
         
         
@@ -101,10 +101,7 @@ stack = Stack()
 stack.push(110)
 stack.push(120)
 stack.push(130)
-print()
-print('Stack Elements : ',end=' ')
+stack.push(139)
 stack.printStack()
-print('\n')
 print('Stack Top : ',stack.stackTop())
-print('\n')
 print('Is stack Empty ? : ',stack.isEmpty())
